@@ -111,12 +111,7 @@
                       class="setting-input"
                       size="small"
                       :placeholder="$t(getPlaceholder(item))"
-                      :type="
-                        item.includes('Key') || item.includes('Token')
-                          ? 'password'
-                          : 'text'
-                      "
-                      show-password
+                      type="text"
                     />
                   </div>
                 </template>
@@ -172,7 +167,7 @@
                       v-model="settingForm[item as SettingNames]"
                       class="setting-input-number"
                       size="small"
-                      :step="settingPreset[item as SettingNames].stepStyle"
+                      :step="1"
                       :min="0"
                       :max="item.includes('Temperature') ? 2 : 4000"
                       controls-position="right"
